@@ -7,6 +7,17 @@ import java.lang.Math;
 public class Huffman_3 {
 
     final static int NCHAR = 128;     // the number of ASCII chars
+    final static  String text1  = "aabaabcdaabaabce";  
+    final static String text2 = "Portland/USA (AP) Ein Abflauen der"
+              + "heftigen  Stuerme  auf  dem  Planeten  Saturn  gibt   den"
+              + "Astronomen Raetsel auf.  Ein Vergleich der  Messdaten der"
+              + "Voyager-Missionen in den fruehen 80er Jahren mit juengsten"
+              + "Aufnahmen des Weltraumteleskops Hubble ergab, dass  sich"
+              + "die Windgeschwindigkeit am Saturn-Aequator um 40  Prozent"
+              + "auf 965  Stundenkilometer verringert  hat. Dies  sei furr"
+              + "einen  derart  grossen  Planeten  aeusserst   ungewoehnlich,"
+              + "erklaerte der Astronom Robert French.";
+
 
 /*  Class Tree is a Huffman tree.
     A Tree has a weight, the combined frequency of all the 
@@ -282,15 +293,5 @@ public class Huffman_3 {
         test(text2);
     }
 
-    final static  String text1  = "aabaabcdaabaabce";  final
-    static String text2 = "Portland/USA (AP) Ein Abflauen der"
-              + "heftigen  Stuerme  auf  dem  Planeten  Saturn  gibt   den"
-              + "Astronomen Raetsel auf.  Ein Vergleich der  Messdaten der"
-              + "Voyager-Missionen in den fruehen 80er Jahren mit juengsten"
-              + "Aufnahmen des Weltraumteleskops Hubble ergab, dass  sich"
-              + "die Windgeschwindigkeit am Saturn-Aequator um 40  Prozent"
-              + "auf 965  Stundenkilometer verringert  hat. Dies  sei furr"
-              + "einen  derart  grossen  Planeten  aeusserst   ungewoehnlich,"
-              + "erklaerte der Astronom Robert French.";
-
+    
 }
