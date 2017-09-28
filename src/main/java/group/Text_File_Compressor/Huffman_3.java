@@ -1,5 +1,11 @@
 package group.Text_File_Compressor;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.Math;
 
 /*  Program to build a Huffman tree and Huffman code */
@@ -276,6 +282,9 @@ public class Huffman_3 {
         System.out.println();
         System.out.println("Length of text: " + text.length());
         System.out.println("The tree is: " + stringForm);
+        System.out.println("Length of tree:"+stringForm.length());
+        dumpContents("","tree",stringForm);
+        
         //System.out.println("Avg code bits per char: " + code.bitsPerChar(text));
         System.out.println("Reconstruction of the tree equals original: "
                + new Parse(stringForm,0).tree.toString().equals(stringForm));
@@ -288,8 +297,30 @@ public class Huffman_3 {
                 + decoder.decode(encoder.encode(text)).equals(text));
     }
 
-    public static void main(String args[]) {
-        test(text1);
+    public static void dumpContents(String path, String fileName, String contents) {
+    	try {
+    		path = "/home/abprashanth/my_projects/Text_File_Compressor/src/main/java/group/Text_File_Compressor/";
+			PrintWriter pw = new PrintWriter(path+fileName+".txt");
+			pw.write(contents);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+    public static void main(String args[]) throws IOException {
+    	//read from a file
+    	File f = new File("/home/abprashanth/my_projects/Text_File_Compressor/src/main/java/group/Text_File_Compressor/parsed_mails.txt");
+    	BufferedReader br = new BufferedReader(new FileReader(f));
+    	String line = br.readLine();
+    	StringBuilder contents = new StringBuilder();
+    	//contents = contents.append(line);
+    	while(line != null){
+    		contents = contents.append(line);
+    		line = br.readLine();
+    	}
+    	String contentsLine = new String(contents);
+        test(contentsLine);
         test(text2);
     }
 
