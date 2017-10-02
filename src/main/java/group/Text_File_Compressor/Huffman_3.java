@@ -75,7 +75,7 @@ public class Huffman_3 {
         } 
 
         public String toString() {
-            return "##"; // REPLACE THIS CODE
+            return "L:"+this.left+", R:"+this.right; // REPLACE THIS CODE
         }
 
         void buildCode(Code code, String path) {
@@ -320,7 +320,7 @@ public class Huffman_3 {
     		line = br.readLine();
     	}
     	String contentsLine = new String(contents);
-        test(contentsLine);
+        test(text1);
         test(text2);
     }
 
